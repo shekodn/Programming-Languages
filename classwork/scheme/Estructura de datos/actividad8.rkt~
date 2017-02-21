@@ -1,0 +1,43 @@
+#lang racket
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; promediosdsdds
+
+(define l '(a0111111 (Jorge Perez) (100 100 100)));define lista
+
+(define (sum elemList)
+  (if
+    (null? elemList)
+    0
+    (+ (car elemList) (sum (cdr elemList)))
+  )
+)
+
+
+(define (promedio lista)
+  (cond ((list? lista)
+      ;(values (car lista) (/ (sum (car(cddr lista))) (length(car(cddr lista)))))
+         ;(cons (car lista) (/ (sum (car(cddr lista))) (length(car(cddr lista)))))
+         (list (car lista) (/ (sum (car(cddr lista))) (length(car(cddr lista)))))
+         ))
+  )
+
+(promedio l)
+
+
+;(define (cuenta-hojas t)
+;  (cond ((null? t) 0))
+;  (cond ((null? (right t)) 1))
+;;         (+ (cuenta-hojas (left  t)) (cuenta-hojas (right t)))
+;
+;  )
+;
+;
+;(define (left tree)
+;  (cadr tree))
+;
+;(define (right tree)
+;  (caddr tree))
+;
+;
+;
+;
+;(cuenta-hojas '(8(5(2()())(7()()))(9()(15(11()())()))))
