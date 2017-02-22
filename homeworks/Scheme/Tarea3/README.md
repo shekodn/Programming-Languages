@@ -1,7 +1,7 @@
 #TC2006 Lenguajes de Programación
 ###Tarea 3: Programación Básica en Scheme Fecha de entrega: martes 21 de febrero de 2017
 
-1. Implementar el predicado repetidos? que reciba cinco argumentos enteros y que determine si alguno de ellos se repite.
+1.Implementar el predicado repetidos? que reciba cinco argumentos enteros y que determine si alguno de ellos se repite.
 Probar con:
 
 ```
@@ -9,7 +9,7 @@ Probar con:
 > (repetidos? 1 -2 1 -2 1) => #t
 ```
 
-2. Implementar la función distintos que reciba 5 argumentos enteros y determine cuantos valores distintos se dieron.
+2.Implementar la función distintos que reciba 5 argumentos enteros y determine cuantos valores distintos se dieron.
 Probar con:
 
 ```
@@ -18,7 +18,7 @@ Probar con:
 > (distintos 4 4 4 4 4)
 ```
 
-3. En matemáticas el valor de pi se puede calcular a partir de la fórmula de la sumatoria infinita de Euler
+3.En matemáticas el valor de pi se puede calcular a partir de la fórmula de la sumatoria infinita de Euler
 
 Implementar la función recursiva pi que regrese el valor de pi calculado mediante los t primeros términos de la serie que la define (mientras más términos más se acercará al valor exacto).
 Probar con:
@@ -29,7 +29,7 @@ Probar con:
 > (pi 5) => 3+31/315 = 976/315 (aprox 3.0984126984126985)
 ```
 
-4. Implementar la versión terminal de una función recursiva m2last que regresa el n-ésimo elemento de la serie cuyos primeros 2 elementos son los números 1 y 2, y a partir del tercero se calcula como la multiplicación de los 2 elementos anteriores. Los primero elementos de la serie son: 1, 2, 2, 4, 8, 32, 256, 8192,...
+4.Implementar la versión terminal de una función recursiva m2last que regresa el n-ésimo elemento de la serie cuyos primeros 2 elementos son los números 1 y 2, y a partir del tercero se calcula como la multiplicación de los 2 elementos anteriores. Los primero elementos de la serie son: 1, 2, 2, 4, 8, 32, 256, 8192,...
 Probar con:
 
 ```
@@ -38,13 +38,13 @@ Probar con:
 > (m2last 9) => 2097152
 ```
 
-5. Para cada uno de los siguientes incisos obtén las dos representaciones faltantes de las tres vistas en clase: representación visual, representación interna, y representación con el constructor cons (no se permiten otros constructores como list o append).
+5.Para cada uno de los siguientes incisos obtén las dos representaciones faltantes de las tres vistas en clase: representación visual, representación interna, y representación con el constructor cons (no se permiten otros constructores como list o append).
 
 a.((1 2 . 3) 4 . 5)
 b. (cons (cons (cons ‘a ‘b)(cons ‘c ‘())) (cons ‘d ‘()))
 
 
-6. Implementar la función recursiva num->list que convierta su argumento dado como un número entero no negativo en una lista de dígitos.
+6.Implementar la función recursiva num->list que convierta su argumento dado como un número entero no negativo en una lista de dígitos.
 Probar con:
 
 ```
@@ -53,7 +53,7 @@ Probar con:
 > (num->list 4321)
 ```
 
-7. Implementar la función recursiva repetidos que determine la cantidad de elementos repetidos en 2 listas. Suponer que no hay elementos repetidos en cada lista.
+7.Implementar la función recursiva repetidos que determine la cantidad de elementos repetidos en 2 listas. Suponer que no hay elementos repetidos en cada lista.
                            Probar con:
 ```
 > (repetidos ‘(0 1 2 3) ‘(4 5 6 7))
@@ -66,7 +66,7 @@ Probar con:
 => (4 3 2 1)
 ```
 
-8. Implementar la función recursiva mezcla que cree una lista ordenada de enteros sin repetición a partir de dos listas ordenadas de enteros que pueden tener valores repetidos.
+8.Implementar la función recursiva mezcla que cree una lista ordenada de enteros sin repetición a partir de dos listas ordenadas de enteros que pueden tener valores repetidos.
 Probar con:
 
 ```
@@ -76,7 +76,7 @@ Probar con:
 ```
 
 
-9. Implementar la función recursiva potencia que regrese el conjunto
+9.Implementar la función recursiva potencia que regrese el conjunto
 potencia de un conjunto dado como argumento.
 Probar con:
 
@@ -86,7 +86,7 @@ Probar con:
 > (potencia ‘(a b c)) => (()(a)(b)(c)(a b)(a c)(b c)(a b c))
 ```
 
-10. Implementar la función recursiva comprime que tome una lista arbitrariamente imbricada que contiene sublistas y dígitos, y que en su lugar regrese una lista con la misma estructura pero con números que representen la concatenación de dígitos consecutivos.
+10.Implementar la función recursiva comprime que tome una lista arbitrariamente imbricada que contiene sublistas y dígitos, y que en su lugar regrese una lista con la misma estructura pero con números que representen la concatenación de dígitos consecutivos.
 Probar con:
 
 ```
