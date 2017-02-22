@@ -1,9 +1,0 @@
-#lang racket
-;(define (leibniz err)
-;  (define (summand n)
-;    (/ (expt -1 n) (+ (* 2.0 n) 1)))
-;  (let summing ((result 0) (n 0))
-;    (let ((increment (summand n)))
-;      (if (< (abs increment) err)
-;          (* 4 (+ result increment))
-;          (summing (+ result increment) (+ n 1))))))
