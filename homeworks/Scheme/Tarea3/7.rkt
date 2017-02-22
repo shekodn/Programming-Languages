@@ -1,0 +1,20 @@
+#lang racket
+(define (repetidos l1 l2)
+  (Aux2Repetidos l1 l2 0)
+  )
+
+(define (Aux2Repetidos l1 l2 a)
+  (cond ((not(null? l1)) (Aux2Repetidos (cdr l1) l2 (AuxRepetidos l1 l2 a)) )
+        (else (display a))
+   )
+
+)
+(define (AuxRepetidos l1 l2 a)
+      (cond ((not (null? l2))
+          (cond ((eqv? (car l1) (car l2)) (AuxRepetidos l1 (cdr l2) (+ a 1)))
+                (else (AuxRepetidos l1 (cdr l2) a))
+                )
+          )
+        (else a)
+      )
+)

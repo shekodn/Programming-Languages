@@ -1,0 +1,34 @@
+#lang racket
+;
+;(define (counts a x n)
+;  (cond [(null? a) n]
+;        [(eq? (first a) x)
+;         (counts (rest a) x (+ n 1))]
+;        [else
+;         (counts (rest a) x n)]))
+;
+;
+;(counts '(a b x c d x e x) 'x 0)
+
+
+(define (acumulador n)
+
+    (+ 1 (acumulador n))
+)
+
+(define (repetidos a b c d e 0)
+
+    (if (= a b)  (acumulador 1) 0)
+    (if (= a c)  (acumulador 1) 0)
+    (if (= a d)  (acumulador 1) 0)
+    (if (= a e)  (acumulador 1) 0)
+
+    (if (= b c)   (acumulador 1) 0)
+    (if (= b d)  (acumulador 1) 0)
+    (if (= b e)  (acumulador 1) 0)
+
+    (if (= c d)  (acumulador 1) 0)
+    (if (= c e)  (acumulador 1) 0)
+
+    (if (= d e)  (acumulador 1) 0)
+)
