@@ -1,2 +1,3 @@
 *.o
 *.hi
+relative/path/to/dir/anotherfile
