@@ -1,9 +1,9 @@
 #TC2006 Lenguajes de Programación
 
-###Tarea 4: Programación Avanzada en Scheme
+##Tarea 4: Programación Avanzada en Scheme
 En esta tarea pondrás en práctica tus conocimientos sobre programación avanzada con estructuras de datos, funciones y primitivos de orden superior en Scheme.
 
-SECCIÓN 1: Estructuras de datos mediante Recursión Explícita – no FOS (60 puntos)
+###SECCIÓN 1: Estructuras de datos mediante Recursión Explícita – no FOS (60 puntos)
 Un Árbol Binario (AB) puede ser representado en Scheme, por medio de una lista en el siguiente formato: (raíz subárbol-izquierdo subárbol-derecho). Por ejemplo, si se tiene definido el siguiente
 AB:
 Su representación en Scheme sería:
@@ -90,7 +90,7 @@ Bajo este formato, el siguiente grafo tendría la representación en Scheme qu
 ))
 ```
 
-###SIN utilizar recursividad explícita ni la definición de funciones auxiliares, implementar las funciones que se describen a continuación utilizando los primitivos de orden superior map, apply y la forma especial lambda:
+#####SIN utilizar recursividad explícita ni la definición de funciones auxiliares, implementar las funciones que se describen a continuación utilizando los primitivos de orden superior map, apply y la forma especial lambda:
 
 6.Implementar la función n-destinos en Scheme que liste los nodos origen que tienen N nodos destino. No se permite usar la función primitiva length.
 Probar con:
