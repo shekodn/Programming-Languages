@@ -1,6 +1,6 @@
 #TC2006 Lenguajes de Programación
 
-##Tarea 4: Programación Avanzada en Scheme
+###Tarea 4: Programación Avanzada en Scheme
 En esta tarea pondrás en práctica tus conocimientos sobre programación avanzada con estructuras de datos, funciones y primitivos de orden superior en Scheme.
 
 ###SECCIÓN 1: Estructuras de datos mediante Recursión Explícita – no FOS (60 puntos)
@@ -36,8 +36,8 @@ Su representación en Scheme sería:
 2.Implementar la función busca-nivel en Scheme que dados un árbol binario de búsqueda y un valor como argumentos, busque el valor y regrese el nivel de profundidad en el que lo encontró. La raíz del árbol completo está a nivel 0. Regresar -1 en caso de no encontrar el valor dentro del árbol.
 Probar con:
 ```
-(busca-nivel AB 11) => 3
-(busca-nivel AB 5)  => 1
+(busca-nivel AB 11) =>  3
+(busca-nivel AB 5)  =>  1
 (busca-nivel AB 4)  => -1
 ```
 3.Implementar la función posicion-recorrida en Scheme que dados un árbol binario, un orden de recorrido y un valor como argumentos, busque el valor en el árbol de acuerdo al orden de recorrido establecido y regrese la posición en que se encontró empezando en el primer elemento. Regresar 0 en caso de no encontrarlo.
