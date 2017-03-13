@@ -41,9 +41,15 @@
                     (+ 1 result))))))
 
 (define (element-index e lst)
-    (cond [(eqv? e (car lst)) 0]
+    (cond [(eqv? e  (car lst)) 0]
           [else (+ (element-index e (cdr lst)) 1)]))
 
 
-(get-list-index '(2 2 2 1 1) 1)
-(element-index  1 '(2 2 2 1 1))
+(define (aux list n)
+
+   (if (null? list)
+      '()
+      (element-index n (aux (cdr list) n))))
+
+
+(aux '(2 2 2 1 1) 2)
