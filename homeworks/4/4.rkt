@@ -1,8 +1,7 @@
 #lang racket
-
 ;4.Implementar la función elimina-abb en Scheme que dados un árbol binario de
 ;búsqueda y un valor como argumentos, busque y elimine el valor especificado,
-;si este existe. Asumir que los valores de los nodos no se repiten. 
+;si este existe. Asumir que los valores de los nodos no se repiten.
 (define ABB
       '(8  (5  (2  ()  ())
               (7  ()  ()))
