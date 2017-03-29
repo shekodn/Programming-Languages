@@ -1,5 +1,4 @@
-#Programación Secuencial en Erlang
-
+# Programación Secuencial en Erlang
 
 1.	Programar la función formula_general en Erlang que resuelva ecuaciones cuadráticas
 de tipo a x^2+b x+c = 0, a partir de sus coeficientes.
