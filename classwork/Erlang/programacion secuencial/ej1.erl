@@ -39,18 +39,13 @@ secuencia(N) when N > 0 ->
 
 % 3.	Programar la función de orden superior mapea en Erlang que trabaje igual que
 % la FOS lists:map (sin utilizarla).
-% Probar con:
-%
-% ```
+
 % ej1:mapea(fun math:sqrt/1, [1,4,9]).		=> [1.0,2.0,3.0]
 % ej1:mapea(fun(X) -> X*X end, [1,2,3]).		=> [1,4,9]
-% ```
 
-mapea([]) ->
-    [];
 
-mapea([H|T]) ->
-    [math:sqrt(H)/1|mapea(T)].
+mapea(_, []) -> [];
+mapea(Function, [H|T]) -> [Function(H)|mapea(Function,T)].
 
 
 % 4.	Programar la función menores que sin utilizar recursividad explícita regrese
