@@ -5,8 +5,8 @@ de tipo a x^2+b x+c = 0, a partir de sus coeficientes.
 Probar con:
 
 ```
-ej1:formula_general(1,-5,6).	=> {3.0,2.0}
-ej1:formula_general(3,2,2).		=> imaginarias
+ej1:formula_general(1,-5,6).	   => {3.0,2.0}
+ej1:formula_general(3,2,2).		   => imaginarias
 ```
 
 2.	Programar la función secuencia en Erlang que cree una lista con los números
