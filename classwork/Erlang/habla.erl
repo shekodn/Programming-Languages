@@ -15,29 +15,23 @@ inicio() ->
 
 
 ciclo() ->
-  receive
-{rectangulo, Anchura, Altura} ->
-io:format("Area del rectangulo = ~p~n" ,[Anchura * Altura]), ciclo();
-    {circulo, R} ->
-       io:format("Area del circulo es ~p~n" , [3.14159 * R * R]),
-       ciclo();
-    {para} ->
-        %bye, %valor de retorno se pierde, tiene que ser un mensaje
-        io:format("~p~n" , ["bye"]),
-        ciclo();
+    receive
+        {rectangulo, Anchura, Altura} ->
+            io:format("Area del rectangulo = ~p~n" ,[Anchura * Altura]), ciclo();
 
-    Otro ->
-       io:format("Desconozco el area del ~p ~n" ,[Otro]),
-       ciclo()
+        {circulo, R} ->
+            io:format("Area del circulo es ~p~n" , [3.14159 * R * R]),
+            ciclo();
+
+        {para} ->
+            bye; %valor de retorno se pierde, tiene que ser un mensaje
+
+        Otro ->
+            io:format("Desconozco el area del ~p ~n" ,[Otro]),
+            ciclo()
 end.
 
 
-% 2> c(habla).
-% {ok,habla}
-% 3> Servidor = spaen(habla, ciclo, []).
-% ** exception error: undefined shell command spaen/3
-% 4> Servidor = spaen(habla, ciclo, []).
-% ** exception error: undefined shell command spaen/3
 % 5> Servidor = spawn(habla, ciclo, []).
 % <0.73.0>
 % 6> Servidor ! {rectangulo, 20, 35}.
