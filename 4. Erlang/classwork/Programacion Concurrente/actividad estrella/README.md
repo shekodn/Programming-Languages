@@ -26,4 +26,4 @@ También trata de probar el proceso hola interactivamente.
 - {total, P}	manda un mensaje de la forma {resultado, S} al proceso P. S debe ser la suma de todos los valores calculados.
 ```
 
-###### Escribe el programa prueba_calcula como el programa prueba_hola del ejercicio anterior para probar tu código.
+##### ***Escribe el programa prueba_calcula como el programa prueba_hola del ejercicio anterior para probar tu código.
