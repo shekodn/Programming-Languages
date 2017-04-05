@@ -1,7 +1,7 @@
 # Programación en Haskell
 
 ### PROBLEMAS: Programación básica y recursiva SIN LISTAS (20 puntos)
-1. Implementar la función cercanos que obtenga los dos valores más cercanos entre 5 valores enteros distintos dados como argumentos. En caso de empate regresar cualquiera de los pares más cercanos.
+1. Implementar la funcion cercanos que obtenga los dos valores más cercanos entre 5 valores enteros distintos dados como argumentos. En caso de empate regresar cualquiera de los pares más cercanos.
 Probar con:
 ```
 > cercanos 8 1 5 4
