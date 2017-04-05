@@ -44,6 +44,32 @@ cercano n1 n2 n3 n4  =
 
   	else (-1,-1)
 
+ -- 2 
+ -- Implementar la función recursiva cuadrada que reciba los enteros positivos N y M,
+ -- para después desplegar una matriz cuadrada NxN con el valor M. (Averiguar cómo desplegar 
+ -- en la terminal desde Haskell).
+cuadrada :: Int -> Int -> IO()
+
+cuadrada a b =
+    if a > 0 then do
+    (col a b 0)
+    else return ()
+
+row :: Int -> Int -> Int -> IO()
+row a b c =
+    if a > c then do
+    putStr (show b)
+    (row a b (c+1))
+    else return ()
+
+col :: Int -> Int -> Int -> IO()
+col a b c =
+    if a > c then do
+    (row (a-1) b 0)
+    putStrLn (show b)
+    (col a b (c + 1))
+    else return ()
+
 --3
 --Implementar la función recursiva cruza que reciba dos listas de N números y un entero U en 
 --el rango de [1,N-1] para luego regresar una lista con dos sublistas, donde la primera sublista 
@@ -95,6 +121,11 @@ main = do
 
 
 --2
+
+	-- putStrLn(show $ cuadrada 21)
+	--putStrLn(show $ cuadrada 53)
+
+
 
 
 --3
