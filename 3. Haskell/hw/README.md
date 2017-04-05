@@ -18,8 +18,8 @@ Probar con:
 ```
 >cuadrada21 => 11 11
 >cuadrada53 => 33333 33333 33333 33333 33333
-PROBLEMAS: Programación recursiva con Listas (30 puntos)
 ```
+#### PROBLEMAS: Programación recursiva con Listas (30 puntos)
 
 3. Implementar la función recursiva cruza que reciba dos listas de N números y un entero U en el rango de [1,N-1] para luego regresar una lista con dos sublistas, donde la primera sublista tiene los primeros U elementos de la primera lista y los últimos N-U elementos de la segunda, mientras que la segunda sublista tiene los primeros U elementos de la segunda lista y los últimos N-U elementos de la primera.
 Probar con:
