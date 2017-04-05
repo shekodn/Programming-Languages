@@ -122,10 +122,8 @@ main = do
 
 --2
 
-	-- putStrLn(show $ cuadrada 21)
-	--putStrLn(show $ cuadrada 53)
-
-
+	(cuadrada 2 1)
+	(cuadrada 5 3)
 
 
 --3
