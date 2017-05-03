@@ -96,12 +96,6 @@ auxTabla(N, M, L, R):- N =:= 10, NM is N*M, append(L, [[[M,N], NM]], D), =(R, D)
 auxTabla(N, M, L, R):- N =\= 10, NM is N*M, append(L, [[[M,N], NM]], D), N1 is N+1, auxTabla(N1, M, D, R).
 
 
-
-
-
-
-
-
 % 7. Implementar el predicado lista_unicos en Prolog que obtenga una
 % lista con los elementos que no aparecen repetidos dentro de una lista imbricada.
 
@@ -113,7 +107,16 @@ auxLista_unicos([X|Y], U, R):- member(X, Y), auxLista_unicos(Y, U, R), !.
 auxLista_unicos([X|Y], U, R):- append(U, [X], L), auxLista_unicos(Y, L, R).
 
 
-distintos(L1, L2, D):- auxDistintos( L1, L2, [], D).
-auxDistintos([], _, L, D):- =(D, L), !.
-auxDistintos([W|X], [Y|Z], L, D):- W=:=Y, !, auxDistintos(X, Z, L, D).
-auxDistintos([W|X], [Y|Z], L, D):- append(L, [[W,Y]], R), auxDistintos(X, Z, R, D).
+
+% 9
+add(X,nil,arbol(X,nil,nil)).
+add(X,arbol(Root,L,R),arbol(Root,L1,R)) :- X @< Root, add(X,L,L1).
+add(X,arbol(Root,L,R),arbol(Root,L,R1)) :- X @> Root, add(X,R,R1).
+
+siembra(L,T) :- siembra(L,T,nil).
+siembra([],T,T).
+siembra([N|Ns],T,T0) :- add(N,T0,T1), siembra(Ns,T,T1).
+
+
+
+% borra2(_, [], L):- =(L,[]), !.
