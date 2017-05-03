@@ -106,6 +106,10 @@ auxLista_unicos([], U, R):- =(R, U), !.
 auxLista_unicos([X|Y], U, R):- member(X, Y), auxLista_unicos(Y, U, R), !.
 auxLista_unicos([X|Y], U, R):- append(U, [X], L), auxLista_unicos(Y, L, R).
 
+%8 mayores
+mayores(N,Arbol,H) :- mayoresAux(N,Arbol,H).
+mayoresAux(N, nil, H) :- =(H, nil), !.
+
 
 
 % 9
@@ -117,4 +121,4 @@ siembraAux(X,arbol(Raiz,L,R),arbol(Raiz,L,R1)) :- X @> Raiz, siembraAux(X,R,R1).
 % Funcion siembra que construye arbol
 siembra(L,A) :- siembra(L,A,nil).
 siembra([],A,A).
-siembra([N|Ns],A,A0) :- siembraAux(N,A0,A1), siembra(Ns,A,A1).
+siembra([X|Y],A,A0) :- siembraAux(X,A0,A1), siembra(Y,A,A1).
