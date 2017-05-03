@@ -109,14 +109,12 @@ auxLista_unicos([X|Y], U, R):- append(U, [X], L), auxLista_unicos(Y, L, R).
 
 
 % 9
-add(X,nil,arbol(X,nil,nil)).
-add(X,arbol(Root,L,R),arbol(Root,L1,R)) :- X @< Root, add(X,L,L1).
-add(X,arbol(Root,L,R),arbol(Root,L,R1)) :- X @> Root, add(X,R,R1).
+% Agrega a arbol
+siembraAux(X,nil,arbol(X,nil,nil)).
+siembraAux(X,arbol(Raiz,L,R),arbol(Raiz,L1,R)) :- X @< Raiz, siembraAux(X,L,L1).
+siembraAux(X,arbol(Raiz,L,R),arbol(Raiz,L,R1)) :- X @> Raiz, siembraAux(X,R,R1).
 
-siembra(L,T) :- siembra(L,T,nil).
-siembra([],T,T).
-siembra([N|Ns],T,T0) :- add(N,T0,T1), siembra(Ns,T,T1).
-
-
-
-% borra2(_, [], L):- =(L,[]), !.
+% Funcion siembra que construye arbol
+siembra(L,A) :- siembra(L,A,nil).
+siembra([],A,A).
+siembra([N|Ns],A,A0) :- siembraAux(N,A0,A1), siembra(Ns,A,A1).
