@@ -67,7 +67,6 @@ comparten(P1, P2, S):- padeceSintoma(P1, S), padeceSintoma(P2, S).
 
 
 % Problema 2
-
 % 2. Implementar el predicado intersectan en Prolog que verifique si
 % dos listas planas pasadas como sus argumentos tienen elementos en común.
 % Probar con:
@@ -77,6 +76,29 @@ member(X, [Y|T]) :- X = Y; member(X, T).
 intersectan([X|Y],[W|Z]):- member(X, [W|Z]), !.
 intersectan([X|Y],[W|Z]):- member(W, [X|Y]), !.
 intersectan([X|Y],[W|Z]):- intersectan(Y,Z).
+
+% Problema 3
+% rango utiliza una función auxiliar para agregar los valores a la lista a la lista
+rango(N, M, R):- auxRango(N, M, [], R).
+auxRango(N, M, L, R):- N =:= M, append(L, [N], D), =(R, D), !.
+auxRango(N, M, L, R):- N =\= M, append(L, [N], D), N1 is N+1, auxRango(N1, M, D, R).
+
+
+% 6. (10 puntos) Implementar el predicado tabla en Prolog que obtenga la tabla
+% de multiplicar de un número, como una lista de pares, donde el primer elemento
+% del par contiene los multiplicandos y el segundo el producto
+% Probar con:
+
+% ?- tabla(1,R) => R = [ [[1,1],1] ,[[1,2],2] ... [[1,10],10]]
+% ?- tabla(4,R) => R = [[[4,1],4],[[4,2],8] ... [[4,10],40]]
+tabla(N, R):- auxTabla(1, N, [], R).
+auxTabla(N, M, L, R):- N =:= 10, append(L, [[N,M, N*M]], D), =(R, D), !.
+auxTabla(N, M, L, R):- N =\= 10, append(L, [[N,M, N*N]], D), N1 is N+1, auxTabla(N1, M, D, R).
+
+
+
+
+
 
 
 
@@ -89,3 +111,9 @@ auxLista_unicos([], U, R):- =(R, U), !.
 %si es atomo metes a la lista
 auxLista_unicos([X|Y], U, R):- member(X, Y), auxLista_unicos(Y, U, R), !.
 auxLista_unicos([X|Y], U, R):- append(U, [X], L), auxLista_unicos(Y, L, R).
+
+
+distintos(L1, L2, D):- auxDistintos( L1, L2, [], D).
+auxDistintos([], _, L, D):- =(D, L), !.
+auxDistintos([W|X], [Y|Z], L, D):- W=:=Y, !, auxDistintos(X, Z, L, D).
+auxDistintos([W|X], [Y|Z], L, D):- append(L, [[W,Y]], R), auxDistintos(X, Z, R, D).
