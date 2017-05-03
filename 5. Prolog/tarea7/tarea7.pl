@@ -92,8 +92,8 @@ auxRango(N, M, L, R):- N =\= M, append(L, [N], D), N1 is N+1, auxRango(N1, M, D,
 % ?- tabla(1,R) => R = [ [[1,1],1] ,[[1,2],2] ... [[1,10],10]]
 % ?- tabla(4,R) => R = [[[4,1],4],[[4,2],8] ... [[4,10],40]]
 tabla(N, R):- auxTabla(1, N, [], R).
-auxTabla(N, M, L, R):- N =:= 10, append(L, [[N,M, N*M]], D), =(R, D), !.
-auxTabla(N, M, L, R):- N =\= 10, append(L, [[N,M, N*N]], D), N1 is N+1, auxTabla(N1, M, D, R).
+auxTabla(N, M, L, R):- N =:= 10, NM is N*M, append(L, [[[M,N], NM]], D), =(R, D), !.
+auxTabla(N, M, L, R):- N =\= 10, NM is N*M, append(L, [[[M,N], NM]], D), N1 is N+1, auxTabla(N1, M, D, R).
 
 
 
