@@ -137,10 +137,10 @@ auxLista_unicos([X|Y], U, E, R):- append(U, [X], L), auxLista_unicos(Y, L, E, R)
 
 
 %8 mayores
-mayores(N,Arbol,H) :- mayoresAux(N,Arbol,R, H).
-mayoresAux(N, nil, R, H) :- =(H, nil), !.
-mayoresAux(N, arbol(Raiz,Left,Right),R, H) :-  Raiz >= N, append(R,[Raiz],D),mayoresAux(N,Left,D,E), mayoresAux(N,Right,E,H),=(H, E), !.
-mayoresAux(N, arbol(Raiz,Left,Right),R, H) :- mayoresAux(N,Left,D,E), mayoresAux(N,Right,E,H), =(H, E), !.
+% umbral
+mayores(_,nil,[]):-!.
+mayores(X,arbol(Raiz,L,R), [Raiz|L]):- X < Raiz, mayores(X,L,W), mayores(X,R,Z), append(W,Z,Li).
+mayores(X,arbol(_,L,D), L):- mayores(X,L,W), mayores(X,R,Z),!,append(W,Z,Li).
 
 
 % 9
