@@ -84,6 +84,16 @@ rango(N, M, R):- auxRango(N, M, [], R).
 auxRango(N, M, L, R):- N =:= M, append(L, [N], D), =(R, D), !.
 auxRango(N, M, L, R):- N =\= M, append(L, [N], D), N1 is N+1, auxRango(N1, M, D, R).
 
+% Problema 4
+% Programa que hace el producto cartesiano de dos listas
+cartesiano(L1, L2, R):- auxCartesiano(L1, L2, [], R).
+auxCartesiano([], _, P, R):- =(R, P), !.
+auxCartesiano(_, [], P, R):- =(R, P), !.
+auxCartesiano([X|Y], L2, P, R):- agrega(X, L2, [], D), append(P, D, L),auxCartesiano(Y, L2, L, R).
+% funcion auxiliar que hace el producto de un atomo con todos los elementos de una listima
+agrega(N, [], D, L):-  =(L, D), !.
+agrega(N, [X|Y], D, L):- append(D, [[N,X]], R), agrega(N, Y, R, L).
+
 
 % Problema 5
 % programa que cuenta las veces que aparece un número en una lista imbricada
@@ -131,7 +141,6 @@ mayores(N,Arbol,H) :- mayoresAux(N,Arbol,R, H).
 mayoresAux(N, nil, R, H) :- =(H, nil), !.
 mayoresAux(N, arbol(Raiz,Left,Right),R, H) :-  Raiz >= N, append(R,[Raiz],D),mayoresAux(N,Left,D,E), mayoresAux(N,Right,E,H),=(H, E), !.
 mayoresAux(N, arbol(Raiz,Left,Right),R, H) :- mayoresAux(N,Left,D,E), mayoresAux(N,Right,E,H), =(H, E), !.
-
 
 
 % 9
